@@ -1,0 +1,102 @@
+
+
+<% layout("/layouts/boilerplate") %>
+<body>
+
+
+
+  <div class="col-8 offset-4">
+
+    
+
+    <h3><%= listing.title%></h3>
+
+    <div class="card" style="width: 18rem;">
+       <img src=<%= listing.image%>  class="card-img-top" alt="...">
+       <div class="card-body">
+        
+         <ul>
+           
+         <span>owned by </span> <i><%= listing.owner.username%></i>
+<br>
+              <li  class="card-text"><%= listing.description%></li>
+              <li  class="card-text"> &#8377; <%= listing.price.toLocaleString("en-IN")%></li>
+              <li  class="card-text"><%= listing.location%></li>
+              <li  class="card-text"><%= listing.country%></li>
+      
+             </ul>
+
+
+
+       </div>
+     </div>
+
+
+
+
+<br>
+
+<%if(currentuser && currentuser._id.equals(listing.owner._id)){%>
+<div class="row">
+       <div class="col-1">
+       <button  class="show-btn"><a style="color: white; text-decoration: none;" href="/listings/edit/<%=listing._id %>">edit</a></button>
+</div>
+
+       <br><br>
+       <div class="col-3">
+       <form action="/listings/<%=listing._id %>?_method=DELETE"  method="post">
+        <button class="btn btn-primary">Delete this listing</button>
+        <%}%>
+       </form></div></div>
+</div>
+
+
+
+<!-- form part -->
+<div class="col-4 offset-4">
+<hr  >
+
+   <form action="/review/<%=listing._id %>" method="post"   >
+    
+
+    <h5>Leave comment</h5>
+    <label for="reviewvalue"> Rating: </label>
+    <input type="number" name="reviewvalue" max="5" min="0">
+    <br>
+    <br>
+    <label for="commment">Comment: </label>
+    <textarea cols="45" rows="2" name="commment"></textarea>
+    <br><br><br>
+    <button type="submit">Submit</button>
+
+
+
+   </form>
+  </div>
+   
+   <hr>
+
+   <div class="col-8 offset-4">
+
+   <h2>All Reviews</h2>
+
+  <ul>
+    <% for (let i=0;i< listing.reviews.length; i++){ %>
+     <li class="">
+      <%= listing.reviews[i].author.username %>
+      <br>
+      <%= listing.reviews[i].comment %>
+        
+<br><br>
+     </li>
+        <% } %>
+
+  </ul>
+
+</div>
+
+
+
+
+</body>
+</html>

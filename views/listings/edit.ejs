@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+   
+    
+ <form action="/listings/<%=listing._id%>?_method=PUT" method="post" class="needs-validation" novalidate>
+  <br>
+<div class="col-8 offset-2">
+  <div>
+  <label for="title" class="form-label">Title</label>
+  <textarea required rows="1"  class="form-control"    name="title"><%= listing.title%></textarea>
+  <div class="invalid-feedback">please enter the title</div>
+  <div class="valid-feedback">looks good</div><br>
+
+</div>  <div>
+  <label for="price" class="form-label">Price</label>
+   <input required  class="form-control" type="number" name="price" value=<%= listing.price %>> <div class="invalid-feedback">please enter the price</div>
+   <div class="valid-feedback">looks good</div><br>
+
+  </div> <div>
+   <label for="imageurl" class="form-label">Image-Url</label>
+  <textarea required rows="1"   class="form-control"  name="imageurl" ><%= listing.image%></textarea> <div class="invalid-feedback">please enter the imageurll</div>
+  <div class="valid-feedback">looks good</div><br>
+
+</div> <div>
+  <label for="description" class="form-label">Description</label>
+  <textarea required class="form-control"  name="description"  ><%= listing.description%></textarea> <div class="invalid-feedback">please enter the description</div>
+  <div class="valid-feedback">looks good</div><br>
+
+</div> <div class="row"><div class="col-md-4">
+  <label for="location" class="form-label">Location</label>
+  <textarea required rows="1"    class="form-control" name="location" ><%= listing.location%></textarea> <div class="invalid-feedback">please enter the location</div>
+  <div class="valid-feedback">looks good</div><br>
+
+
+</div> <div class="col-md-8">
+<label for="country" class="form-label">Country</label>
+   <textarea required rows="1"   class="form-control"  name="country" ><%= listing.country%></textarea> <div class="invalid-feedback">please enter the country</div>
+   <div class="valid-feedback">looks good</div><br>
+
+  </div></div>
+   <div>
+   <button type="submit" class="btn btn-primary">submit</button></div></div>
+ </form>
+ <br><br>
+</body>
+</html>

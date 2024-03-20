@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<body>
+   
+    
+ <form action="/listings" method="post" class="needs-validation" novalidate >
+  <div class="col-8 offset-2">
+   <div>
+  <label for="title" class="form-label">Title</label>
+  <textarea required rows="1" name="title" placeholder="enter the title"  class="form-control"></textarea>
+     <div class="invalid-feedback">please enter the title</div>
+     <div class="valid-feedback">looks good</div>
+     <br>
+</div>
+    <div>
+  <label for="Price" class="form-label">Price</label>
+   <input required  name="price" placeholder="enter the price"  class="form-control"> <div class="invalid-feedback">please enter the price</div>
+   <div class="valid-feedback">looks good</div><br>
+  </div>
+  
+   <div>
+
+    <div>
+      <label for="imageurl" class="form-label">Upload Image</label>
+    <input type="text" rows="1" name="imageurl"  class="form-control"></div><br>
+      <div>
+
+
+
+
+  <label for="description" class="form-label">Description</label>
+  <textarea required name="description"   placeholder="enter the description"  class="form-control"></textarea> <div class="invalid-feedback">please enter the description</div>
+  <div class="valid-feedback">looks good</div></div><br>
+  <div class="row">
+<div class="col-md-4">
+
+ 
+  <label for="locattion" class="form-label">Location</label>
+  <textarea required  rows="1" name="location" id=""placeholder="enter the location"  class="form-control"></textarea> <div class="invalid-feedback">please enter the location</div>
+  <div class="valid-feedback">looks good</div></div><br>
+   <div class="col-md-8">
+  <label for="country" class="form-label">Country</label>
+   <textarea required rows="1" name="country" id=""  placeholder="enter the country"  class="form-control"></textarea> <div class="invalid-feedback">please enter the country</div>
+   <div class="valid-feedback">looks good</div></div></div><br>
+
+    <div>
+   <button type="submit" class="btn btn-primary">submit</button></div></div>
+ </form>
+
+   
+
+
+
+
+</body>
+</html>
