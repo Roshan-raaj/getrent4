@@ -203,7 +203,7 @@ res.redirect("./listings");
 
 
 app.get("/",(req,res)=>{
-    res.send("hy everyone");
+    res.redirect("./listings");
 })
 
 app.get("/listings", wrapAsync(async (req,res)=>{
